@@ -38,4 +38,17 @@ class MyArrayListTests {
         assertThat(list.size()).isEqualTo(3);
         assertThat(list.get(2)).isEqualTo("Element3");
     }
+
+    @Test
+    @DisplayName("데이터 삭제")
+    void test04() {
+        assertThat(list.add("Element1")).isTrue();
+        assertThat(list.add("Element2")).isTrue();
+        assertThat(list.add("Element3")).isTrue();
+        assertThat(list.remove(1)).isEqualTo("Element2");
+        assertThat(list.size()).isEqualTo(2);
+        assertThat(list.get(2)).isEqualTo(null);
+        assertThat(list.get(1)).isEqualTo("Element3");
+        assertThat(list.get(0)).isEqualTo("Element1");
+    }
 }

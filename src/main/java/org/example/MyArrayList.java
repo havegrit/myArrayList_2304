@@ -34,4 +34,14 @@ public class MyArrayList <T> {
     private boolean ifNotEnough() {
         return size == data.length-1;
     }
+
+    public String remove(int index) {
+        String targetData = data[index];
+        for (int i = index; i < size - 1; i++) {
+            data[i] = data[i + 1];
+        }
+        data[size - 1] = null;
+        size--;
+        return targetData;
+    }
 }
