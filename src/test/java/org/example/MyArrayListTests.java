@@ -28,4 +28,14 @@ class MyArrayListTests {
         assertThat(list.add("Element1")).isTrue();
         assertThat(list.get(0)).isEqualTo("Element1");
     }
+
+    @Test
+    @DisplayName("데이터 저장 공간 부족 시, 공간 추가")
+    void test03() {
+        assertThat(list.add("Element1")).isTrue();
+        assertThat(list.add("Element2")).isTrue();
+        assertThat(list.add("Element3")).isTrue();
+        assertThat(list.size()).isEqualTo(3);
+        assertThat(list.get(2)).isEqualTo("Element3");
+    }
 }
