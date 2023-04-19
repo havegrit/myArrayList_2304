@@ -71,7 +71,6 @@ class MyArrayListTests {
         assertThat(list.indexOf("Element2")).isEqualTo(1);
         assertThat(list.indexOf("Element3")).isEqualTo(-1);
     }
-
     @Test
     @DisplayName("모든 데이터 지우기")
     void testClear() {
@@ -81,5 +80,16 @@ class MyArrayListTests {
         list.clear();
         assertThat(list.size()).isEqualTo(0);
         assertThat(list.isEmpty()).isTrue();
+    }
+
+    @Test
+    @DisplayName("해당 데이터가 존재한다면 삭제")
+    void testRemoveIf() {
+        list.add("Element1");
+        list.add("Element2");
+        list.add("Element3");
+        assertThat(list.removeIf(e -> e.equals("Element2"))).isTrue();
+        assertThat(list.removeIf(e -> e.equals("Element4"))).isFalse();
+        assertThat(list.contains("Element2")).isFalse();
     }
 }

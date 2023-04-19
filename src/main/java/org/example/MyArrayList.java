@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.function.Predicate;
+
 public class MyArrayList <T> {
     private String[] data = new String[2];
     private int size = 0;
@@ -70,5 +72,16 @@ public class MyArrayList <T> {
 
     public boolean isEmpty() {
         return size == 0;
+    }
+
+    public boolean removeIf(Predicate<String> predicate) {
+        boolean result = false;
+        for (int i = 0; i < size; i++) {
+            result = predicate.test(data[i]);
+            if (result) {
+                remove(i);
+            }
+        }
+        return result;
     }
 }
