@@ -71,4 +71,15 @@ class MyArrayListTests {
         assertThat(list.indexOf("Element2")).isEqualTo(1);
         assertThat(list.indexOf("Element3")).isEqualTo(-1);
     }
+
+    @Test
+    @DisplayName("모든 데이터 지우기")
+    void testClear() {
+        list.add("Element1");
+        list.add("Element2");
+        list.add("Element3");
+        list.clear();
+        assertThat(list.size()).isEqualTo(0);
+        assertThat(list.isEmpty()).isTrue();
+    }
 }
