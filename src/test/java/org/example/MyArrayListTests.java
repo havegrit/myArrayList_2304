@@ -60,4 +60,15 @@ class MyArrayListTests {
         assertThat(list.contains("Element1")).isTrue();
         assertThat(list.contains("Element3")).isFalse();
     }
+
+    @Test
+    @DisplayName("인덱스 추출")
+    void testIndexOf() {
+        list.add("Element1");
+        list.add("Element2");
+        list.add("Element1");
+        assertThat(list.indexOf("Element1")).isEqualTo(0);
+        assertThat(list.indexOf("Element2")).isEqualTo(1);
+        assertThat(list.indexOf("Element3")).isEqualTo(-1);
+    }
 }
