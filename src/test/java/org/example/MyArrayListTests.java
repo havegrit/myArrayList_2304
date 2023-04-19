@@ -51,4 +51,13 @@ class MyArrayListTests {
         assertThat(list.get(1)).isEqualTo("Element3");
         assertThat(list.get(0)).isEqualTo("Element1");
     }
+
+    @Test
+    @DisplayName("데이터 포함 여부 확인")
+    void testContains() {
+        list.add("Element1");
+        list.add("Element2");
+        assertThat(list.contains("Element1")).isTrue();
+        assertThat(list.contains("Element3")).isFalse();
+    }
 }

@@ -44,4 +44,13 @@ public class MyArrayList <T> {
         size--;
         return targetData;
     }
+
+    public boolean contains(String element) {
+        for (String e : data) {
+            if (element.equals(e)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
